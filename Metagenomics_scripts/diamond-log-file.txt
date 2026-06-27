@@ -1,0 +1,26 @@
+# DATE: 27 Jun 26 00:45:33
+# CMD LINE: diamond makedb --in /tmp/tmphwbkkgp0/Ribosomal_S9 -d /home/qasim/miniconda3/lib/python3.10/site-packages/anvio/data/misc/SCG_TAXONOMY/GTDB/SCG_SEARCH_DATABASES/Ribosomal_S9.dmnd -p 1
+diamond v2.1.12.166 (C) Max Planck Society for the Advancement of Science, Benjamin Buchfink, University of Tuebingen
+Documentation, support and updates available at http://www.diamondsearch.org
+Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
+
+#CPU threads: 1
+Scoring parameters: (Matrix=BLOSUM62 Lambda=0.267 K=0.041 Penalties=11/1)
+Database input file: /tmp/tmphwbkkgp0/Ribosomal_S9
+Opening the database file...  [0.003s]
+Loading sequences...  [0.074s]
+Masking sequences...  [0.48s]
+Writing sequences...  [0.006s]
+Hashing sequences...  [0.003s]
+Loading sequences...  [0s]
+Writing trailer...  [0.001s]
+Closing the input file...  [0s]
+Closing the database file...  [0s]
+
+Database sequences  78824
+  Database letters  10909371
+     Database hash  e4a631d50b0ffffe14dc60842f0df74e
+        Total time  0.570000s
+[27 Jun 26 00:45:33] Command line .................................: diamond makedb --in /tmp/tmphwbkkgp0/Ribosomal_S9 -d
+                                                /home/qasim/miniconda3/lib/python3.10/site-packages/anvio/data/misc/SCG_TAXONOMY/GTDB/SCG_SEARCH_DATABASES/Ribosomal_S9.dmnd -p 1
+[27 Jun 26 00:45:33] Diamond search DB ............................: /home/qasim/miniconda3/lib/python3.10/site-packages/anvio/data/misc/SCG_TAXONOMY/GTDB/SCG_SEARCH_DATABASES/Ribosomal_S9.dmnd.dmnd

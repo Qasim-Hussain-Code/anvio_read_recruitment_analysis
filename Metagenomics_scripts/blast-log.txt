@@ -1,0 +1,13 @@
+# DATE: 27 Jun 26 01:54:10
+# CMD LINE: makeblastdb -in /tmp/tmp6tbtngxc -dbtype prot -out /home/qasim/miniconda3/lib/python3.10/site-packages/anvio/data/misc/COG/COG24/DB_BLAST/COG/COG.fa
+
+
+Building a new DB, current time: 06/27/2026 01:54:11
+New DB name:   /home/qasim/miniconda3/lib/python3.10/site-packages/anvio/data/misc/COG/COG24/DB_BLAST/COG/COG.fa
+New DB title:  /tmp/tmp6tbtngxc
+Sequence type: Protein
+Keep MBits: T
+Maximum file size: 3000000000B
+Adding sequences from FASTA; added 7698004 sequences in 83.613 seconds.
+
+

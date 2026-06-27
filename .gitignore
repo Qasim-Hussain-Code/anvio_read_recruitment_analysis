@@ -1,1 +1,5 @@
+# ignore anvio tar file
+anvio-9.tar.gz
+
+# ignore fastq directory
 
