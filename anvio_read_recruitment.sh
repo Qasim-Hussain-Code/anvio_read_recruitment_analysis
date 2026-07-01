@@ -1,4 +1,8 @@
-curl -L https://cloud.uol.de/public.php/dav/files/B849axL35cBZzYD 
+#!/bin/bash
+set -euo pipefail
+
+# Download data pack
+curl -L https://cloud.uol.de/public.php/dav/files/B849axL35cBZzYD \
      -o metagenomic-read-recruitment-data-pack.tar.gz
 
 tar -zxvf metagenomic-read-recruitment-data-pack.tar.gz
@@ -6,46 +10,53 @@ cd metagenomic-read-recruitment-data-pack
 
 ls metagenomes/
 
-# prepare for anvio
+# Activate anvio-9 conda environment
+# (conda activate doesn't work in scripts without sourcing conda init first)
+source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate anvio-9
+
+# Prepare for anvio
 anvi-gen-contigs-database -f genome.fa -o genome.db
 
-# run HMMs on the contigs database
+# Run HMMs on the contigs database
 anvi-run-ncbi-cogs -c genome.db --num-threads 10
 anvi-run-hmms -c genome.db
 anvi-run-scg-taxonomy -c genome.db --num-threads 10
 
 
-# bowtie2 index
+# Bowtie2 index
 bowtie2-build genome.fa genome
 
-bowtie2 -x genome 
-    -1 metagenomes/magdalena-R1.fastq 
-    -2 metagenomes/magdalena-R2.fastq 
-    -S magdalena.sam 
+# (1) Perform read recruitment for magdalena
+bowtie2 -x genome \
+    -1 metagenomes/magdalena-R1.fastq \
+    -2 metagenomes/magdalena-R2.fastq \
+    -S magdalena.sam \
     -p 10
 
-samtools view -F 4 
-    -bS magdalena.sam 
-    -o magdalena-RAW.bam 
+# (2) Convert SAM to BAM
+samtools view -F 4 \
+    -bS magdalena.sam \
+    -o magdalena-RAW.bam \
     --threads 10
 
+# (3) Sort and index BAM
 samtools sort magdalena-RAW.bam -o magdalena.bam --threads 10
 samtools index magdalena.bam --threads 10
 
-
-anvi-profile -i magdalena.bam 
-    -c genome.db 
-    -o magdalena-profile 
-    --cluster 
+# Profile the BAM file
+anvi-profile -i magdalena.bam \
+    -c genome.db \
+    -o magdalena-profile \
+    --cluster \
     -T 10
 
-anvi-interactive -c genome.db 
-    -p magdalena-profile/PROFILE.db
+# Visualize (comment out if running non-interactively)
+# anvi-interactive -c genome.db \
+#     -p magdalena-profile/PROFILE.db
 
 
-
-# for loop for all
+# For loop for remaining samples
 for person in batuhan alejandra jonas jessika
 do
     echo "Working on ${person} ..."
@@ -57,19 +68,19 @@ do
     rm -rf ${person}.sam ${person}-RAW.bam
 done
 
-anvi-merge *-profile/PROFILE.db 
-    -c genome.db 
+# Merge all profiles
+anvi-merge *-profile/PROFILE.db \
+    -c genome.db \
     -o merged-profiles
 
+# Visualize merged profiles (comment out if running non-interactively)
+# anvi-interactive -p merged-profiles/PROFILE.db \
+#     -c genome.db
 
-anvi-interactive -p merged-profiles/PROFILE.db 
-    -c genome.db
-
-
-# collection
+# Collection and gene-mode view
 anvi-script-add-default-collection -p merged-profiles/PROFILE.db
-anvi-interactive -p merged-profiles/PROFILE.db 
-    -c genome.db 
-    -C DEFAULT 
-    -b EVERYTHING 
-    --gene-mode
+# anvi-interactive -p merged-profiles/PROFILE.db \
+#     -c genome.db \
+#     -C DEFAULT \
+#     -b EVERYTHING \
+#     --gene-mode
