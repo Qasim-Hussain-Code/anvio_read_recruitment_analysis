@@ -10,8 +10,7 @@ cd metagenomic-read-recruitment-data-pack
 
 ls metagenomes/
 
-# Activate anvio-9 conda environment
-# (conda activate doesn't work in scripts without sourcing conda init first)
+# Activate anvio-9 containing base conda environment
 source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate base
 
