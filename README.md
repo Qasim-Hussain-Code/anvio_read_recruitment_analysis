@@ -54,6 +54,8 @@ anvio_read_recruitment_analysis/
 
 ## Pipeline Overview
 
+![Pipeline Workflow](workflow.png)
+
 The analysis proceeds through the following stages, each executed within `anvio_read_recruitment.sh`:
 
 ### 1. Data Retrieval
