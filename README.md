@@ -1,5 +1,7 @@
 # Metagenomic Read Recruitment Analysis
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A reproducible read recruitment workflow, implemented end-to-end using anvi'o (v9), Bowtie2, and SAMtools, following the Meren Lab's tutorial on short-read mapping against a reference genome across multiple metagenomic samples.
 
 ---
@@ -162,4 +164,6 @@ This archive is automatically downloaded and extracted by the pipeline script. I
 
 ## License
 
-Copyright Qasim Hussain. All rights reserved.
+This project is licensed under the terms of the MIT License. For details, please refer to the [LICENSE](LICENSE) file.
+
+Copyright (c) 2026 Qasim Hussain. All rights reserved.
