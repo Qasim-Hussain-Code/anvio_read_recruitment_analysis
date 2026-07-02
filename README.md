@@ -49,8 +49,6 @@ anvio_read_recruitment_analysis/
 |       |-- <sample>-R2.fastq        # Reverse reads per sample
 ```
 
-> **Note**: Directories containing sequencing data, alignments, and database files exceed 100 MB per file and are excluded from version control. Placeholder `README.md` files are committed within each data directory to preserve the full project structure on GitHub. See the Data Availability section below for retrieval instructions.
-
 ---
 
 ## Pipeline Overview
