@@ -1,6 +1,29 @@
-# ignore anvio tar file
+# ==============================================================================
+# Anvi'o Read Recruitment Analysis — .gitignore
+# ==============================================================================
+# Files exceeding 100 MB are excluded from version control.
+# Placeholder README.md files are retained inside data directories
+# to preserve the project structure on GitHub.
+# ==============================================================================
+
+# --- Compressed archives ---
+metagenomic-read-recruitment-data-pack.tar.gz
 anvio-9.tar.gz
 
-# ignore data pack (tar.gz and extracted directory contain files >100MB)
-metagenomic-read-recruitment-data-pack.tar.gz
-metagenomic-read-recruitment-data-pack/
+# --- Data pack directory (large sequencing data, alignments, databases) ---
+# Ignore all contents, then selectively un-ignore README placeholders
+# to maintain directory structure visibility in the remote repository.
+metagenomic-read-recruitment-data-pack/*
+!metagenomic-read-recruitment-data-pack/README.md
+!metagenomic-read-recruitment-data-pack/metagenomes/
+metagenomic-read-recruitment-data-pack/metagenomes/*
+!metagenomic-read-recruitment-data-pack/metagenomes/README.md
+
+# --- macOS filesystem artifacts ---
+.DS_Store
+._*
+
+# --- Python / Jupyter ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
