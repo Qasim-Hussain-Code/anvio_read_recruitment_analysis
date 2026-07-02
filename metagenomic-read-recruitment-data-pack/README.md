@@ -1,6 +1,6 @@
-# Data Pack — Metagenomic Read Recruitment
+# Data Pack: Metagenomic Read Recruitment
 
-This directory contains all input data, intermediate alignments, and anvi'o databases produced by the read recruitment pipeline. The contents are excluded from version control due to file size constraints (>100 MB per file).
+This directory contains all input data, intermediate alignments, and anvi'o databases produced by the read recruitment pipeline. The contents are excluded from version control due to file size constraints (exceeding 100 MB per file).
 
 ---
 
@@ -12,7 +12,7 @@ This directory is populated automatically when `anvio_read_recruitment.sh` downl
 
 | File / Directory       | Description                                                          |
 |------------------------|----------------------------------------------------------------------|
-| `genome.fa`            | Reference genome — single contig, ~5.1 Mb                           |
+| `genome.fa`            | Reference genome, consisting of a single contig of approximately 5.1 Mb |
 | `metagenomes/`         | Paired-end FASTQ files for five mock human gut metagenomes           |
 
 ### Bowtie2 Index
@@ -25,20 +25,20 @@ This directory is populated automatically when `anvio_read_recruitment.sh` downl
 
 | File                   | Description                                                          |
 |------------------------|----------------------------------------------------------------------|
-| `genome.db`            | Anvi'o contigs database (ORFs, HMMs, COGs, SCG taxonomy)             |
+| `genome.db`            | Anvi'o contigs database containing ORFs, HMMs, COGs, and SCG taxonomy |
 
 ### Alignment Files
 
 | File                   | Description                                                          |
 |------------------------|----------------------------------------------------------------------|
-| `<sample>.bam`         | Sorted BAM — mapped reads per sample                                 |
+| `<sample>.bam`         | Sorted BAM format mapping reads per sample                           |
 | `<sample>.bam.bai`     | BAM index per sample                                                 |
 
 ### Anvi'o Profile Databases
 
 | Directory              | Description                                                          |
 |------------------------|----------------------------------------------------------------------|
-| `<sample>-profile/`    | Single-sample anvi'o profile (coverage, variability, detection)      |
+| `<sample>-profile/`    | Single-sample anvi'o profile tracking coverage, variability, and detection |
 | `merged-profiles/`     | Merged multi-sample profile database for interactive visualisation   |
 
 ---

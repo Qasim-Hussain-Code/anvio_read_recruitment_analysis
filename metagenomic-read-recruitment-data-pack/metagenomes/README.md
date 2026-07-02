@@ -1,6 +1,6 @@
-# Metagenomes — Paired-End Sequencing Reads
+# Metagenomes: Paired-End Sequencing Reads
 
-This directory contains paired-end FASTQ files from five mock human gut metagenomes. These files are excluded from version control due to their size (each exceeding 100 MB).
+This directory contains paired-end FASTQ files from five mock human gut metagenomes. These files are excluded from version control due to their size, which exceeds 100 MB per file.
 
 ---
 
@@ -18,4 +18,4 @@ This directory contains paired-end FASTQ files from five mock human gut metageno
 
 ## Data Source
 
-These reads are distributed as part of the Meren Lab's metagenomic read recruitment data pack and are automatically downloaded by `anvio_read_recruitment.sh`. The mock metagenomes simulate human gut samples — each representing a different individual — and are designed to illustrate the fundamentals of competitive read recruitment and downstream coverage analysis. See the root `README.md` for the download URL and full pipeline documentation.
+These reads are distributed as part of the Meren Lab's metagenomic read recruitment data pack and are automatically downloaded by `anvio_read_recruitment.sh`. The mock metagenomes simulate human gut samples, with each representing a different individual. They are designed to illustrate the fundamentals of competitive read recruitment and downstream coverage analysis. See the root `README.md` for the download URL and full pipeline documentation.
